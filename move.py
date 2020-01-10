@@ -1,4 +1,4 @@
-import os, shutil, time, glob, fnmatch
+import os, shutil, time, fnmatch
 path = "/home/Thanawat/Dokumente/Workspace/python/sdir/"
 moveto = "/home/Thanawat/Dokumente/Workspace/python/ddir/"
 count = 0
@@ -21,7 +21,7 @@ def exceMove():
     print("moved: "+ str(count) + " files")
     for f in im:
         shutil.move(path+f,moveto+f)
-	count += 1
+        count +=1
         print(f)
 while True:
     clear()
