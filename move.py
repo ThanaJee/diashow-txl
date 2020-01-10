@@ -1,11 +1,12 @@
 import os, shutil, time, glob, fnmatch
 path = "/home/Thanawat/Dokumente/Workspace/python/sdir/"
-moveto = "/home/Thanawat/Dokumente/Workspace/python/ddir/"
+moveto = "/users/steven/Documents/repos/diashow-txl/images"
 count = 0
 clear = lambda: os.system('clear')
 pattern = "*.JPG"
-def exceMove():
+def exceMove(path):
     global count
+    print(path)
     files = os.listdir(path)
     files.sort()
     def img(files):
@@ -18,11 +19,11 @@ def exceMove():
 
     im = fnmatch.filter(os.listdir(path), pattern)           
 #Anzahl der verschobenen Dateien
-    print("moved: "+ str(count) + " files")
-    for f in im:
-        shutil.move(path+f,moveto+f)
-	count += 1
-        print(f)
+#    print("moved: "+ str(count) + " files")
+#    for f in im:
+#        shutil.move(path+f,moveto+f)
+#	count += 1
+#        print(f)
 while True:
     clear()
     exceMove()
