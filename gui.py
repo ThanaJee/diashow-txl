@@ -11,7 +11,7 @@ root = Tk(className="TakYoo Diashow")
 root.geometry("400x300+200+50")
 
 def say_hi():
-    root.directory =  filedialog.askdirectory(initialdir = "/users",title = "Ordner für Diashow auswählen")
+    root.directory =  filedialog.askdirectory(initialdir = "/users",title = "Ordner für Diashow ausaehlen")
     from move import exceMove
     exceMove(root.directory)
     print (root.directory)
@@ -20,7 +20,7 @@ def body(master):
     frame = Frame(master)
     frame.pack()
 
-    Label(root, wraplength=300 ,text="Die Diashow ist über folgende Adresse im gleichen Netzwerk erreichbar: ").pack()
+    Label(root, wraplength=300 ,text="Die Diashow ist ueber folgende Adresse im gleichen Netzwerk erreichbar: ").pack()
 
     var = StringVar()
     var.set(hostname)
@@ -34,7 +34,7 @@ def body(master):
     
     
     Button(frame, text="Programm beenden", fg="red", command=frame.quit).pack(side=LEFT)
-    Button(frame, text="Ordner auswählen", command= lambda: say_hi()).pack(side=LEFT)
+    Button(frame, text="Ordner auswaehlen", command= lambda: say_hi()).pack(side=LEFT)
 
 body(root)
 root.mainloop()
