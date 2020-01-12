@@ -12,31 +12,34 @@ copied_Files=[]
 def exceMove():
     global count
     print(path)
-    print(copied_Files)
+    
+    subset_of_im = set(copied_Files)
     files = os.listdir(path)
     files.sort()
     im = fnmatch.filter(os.listdir(path), pattern)
-    print(im)
+    img = [x for x in im if x not in subset_of_im]
 #Anzahl der verschobenen Dateien
     print("moved: "+ str(count) + " files")
-    for f in im:
+    for f in img:
         if move_or_copy == 0:
             shutil.move(path+f,moveto+f)
             count +=1
             print(f)
-            #time.sleep(0.5)
+            time.sleep(0.5)
         else:
             shutil.copy(path+f,moveto+f)
             count +=1
             print(f)
-            #time.sleep(0.5)
-    copied_Files.append(im)
-    #print(copied_Files)
+            time.sleep(0.5)
+    for c in im:
+        if copied_Files.__contains__(c):
+            continue
+        else:
+            copied_Files.append(c)
+    print(copied_Files)
 while True:
     clear()
     exceMove()
 #Zeitintervalle time.sleep(seconds)    
     time.sleep(2)
-
-
-
+    
