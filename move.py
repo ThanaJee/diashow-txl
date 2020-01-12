@@ -4,9 +4,12 @@ moveto = "/home/Thanawat/Dokumente/Workspace/python/ddir/"
 #moveto2 = "/users/steven/Documents/repos/diashow-txl/images"
 count = 0
 clear = lambda: os.system('clear')
+#pattern muss vom GUI übergeben werden 
 pattern = "*.JPG"
-#move_or_copy muss im GUI übergeben werden / 0 == move, 1 == copy
+#move_or_copy muss vom GUI übergeben werden / 0 == move, 1 == copy
 move_or_copy = 1
+#costom_time muss vom GUI übergeben werden / 1 == 1 min
+costom_min = 1
 copied_Files=[]
 
 def exceMove():
@@ -40,6 +43,7 @@ def exceMove():
 while True:
     clear()
     exceMove()
-#Zeitintervalle time.sleep(seconds)    
+#Zeitintervalle time.sleep(seconds)
+#   time.sleep(60*costom_time)    
     time.sleep(2)
     
